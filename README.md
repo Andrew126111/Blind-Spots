@@ -1,50 +1,93 @@
-# Blind-Spots
-a RAG-based AI that explains cognitive biases, decision-making, and emotion using grounded research documents
+🕯️ Blind Spots
 
-# RAG Chatbot
+Blind Spots is a calm, emotionally present conversational AI built using a Retrieval-Augmented Generation (RAG) pipeline.
+It is designed to sit with the user, reflect feelings gently, and provide grounded responses without analysis, advice, or pressure.
 
-This project is a Retrieval-Augmented Generation (RAG) chatbot that answers questions using information from custom documents rather than relying only on a language model’s general knowledge.
+Rather than trying to fix problems or push conversation forward, Blind Spots focuses on comfort, presence, and clarity.
 
-The chatbot retrieves relevant content from provided documents and uses that information as context to generate more accurate, grounded, and informative responses.
+🌱 What This Project Does
 
----
+Uses RAG (Retrieval-Augmented Generation) to ground responses in provided documents
 
-## 💡 Why I Built This Project
+Responds in a therapist-like, emotionally supportive tone
 
-I built this project because I enjoy working with AI and wanted to learn more about machine learning, chatbot systems, and how tools like LangChain and Retrieval-Augmented Generation (RAG) work in practice.
+Avoids advice, diagnosis, or interrogation
 
-I was also motivated by personal experience. During stressful periods such as exam season, it can be helpful to understand *why* certain feelings or reactions occur from a more scientific or informational perspective. While friends can offer comfort and reassurance, this chatbot is designed to provide structured, knowledge-based explanations using reliable information.
+Introduces itself gently at the start of a conversation
 
----
+Streams responses in real time via a simple web interface
 
-## 🚀 Features
-- Retrieval-Augmented Generation (RAG) pipeline
-- Uses custom documents (PDFs / Markdown files)
-- Semantic search with embeddings
-- Context-aware responses
-- Modular and easy to extend
+The assistant only responds based on retrieved context and emotional presence — not assumptions or external knowledge.
 
----
+🧠 How It Works (High Level)
 
-## 🧠 How It Works
-1. Documents are loaded and split into smaller chunks  
-2. Each chunk is converted into vector embeddings  
-3. Embeddings are stored in a vector database  
-4. When a user asks a question:
-   - Relevant chunks are retrieved based on similarity
-   - The language model generates a response using that context
+Documents are loaded and split into chunks
 
----
+Chunks are embedded and stored in a Chroma vector database
 
-## 📁 Project Structure
-│── data/ # PDF or Markdown knowledge sources
-│── embeddings/ # Vector database files
-│── app.py # Main chatbot logic
-│── requirements.txt
-│── README.md
+User input retrieves the most relevant chunks
 
-## 🛠️ Technologies Used
-- Python
-- OpenAI API
-- LangChain
-- Vector database (e.g., ChromaDB)
+A carefully designed prompt guides the model’s tone and behavior
+
+Responses are streamed to the user using Gradio
+
+🛠️ Tech Stack
+
+Python
+
+LangChain
+
+ChromaDB
+
+OpenAI / compatible LLM
+
+Gradio
+
+dotenv
+
+📂 Project Structure
+.
+├── data/               # Source documents
+├── chroma_db/          # Vector database
+├── create_database.py  # Builds the vector store
+├── chatbot.py          # Chat interface + prompt logic
+├── .env                # Environment variables (not committed)
+├── .gitignore
+└── README.md
+
+🚧 Current Status
+
+This is an early-stage project built as a learning experience.
+The focus so far has been on:
+
+Prompt design
+
+Emotional tone
+
+RAG fundamentals
+
+System behavior boundaries
+
+Future improvements may include:
+
+Better context handling
+
+Local/offline models
+
+Improved UI
+
+More refined emotional responses
+
+⚠️ Notes
+
+This project is not a replacement for therapy or mental health care
+
+It does not give advice, diagnoses, or treatment
+
+It is intended as a supportive, reflective tool only
+
+✨ Why This Exists
+
+This project explores how AI can feel less mechanical and more present, without pretending to be human or offering guidance it shouldn’t.
+
+Sometimes, clarity starts with being heard.
