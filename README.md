@@ -1,93 +1,44 @@
-🕯️ Blind Spots
+# 🕯️ Blind Spots
 
-Blind Spots is a calm, emotionally present conversational AI built using a Retrieval-Augmented Generation (RAG) pipeline.
+Blind Spots is a calm, emotionally present conversational AI built using a Retrieval-Augmented Generation (RAG) pipeline.  
 It is designed to sit with the user, reflect feelings gently, and provide grounded responses without analysis, advice, or pressure.
 
-Rather than trying to fix problems or push conversation forward, Blind Spots focuses on comfort, presence, and clarity.
+Rather than trying to fix problems or push conversations forward, Blind Spots focuses on comfort, presence, and clarity.
 
-🌱 What This Project Does
+---
 
-Uses RAG (Retrieval-Augmented Generation) to ground responses in provided documents
+## 🌱 What This Project Does
 
-Responds in a therapist-like, emotionally supportive tone
+- Uses Retrieval-Augmented Generation (RAG) to ground responses in provided documents
+- Responds in a therapist-like, emotionally supportive tone
+- Avoids advice, diagnosis, or interrogation
+- Introduces itself gently at the start of a conversation
+- Streams responses in real time through a simple web interface
 
-Avoids advice, diagnosis, or interrogation
+The assistant responds with emotional presence while remaining grounded in retrieved context, rather than assumptions or external knowledge.
 
-Introduces itself gently at the start of a conversation
+---
 
-Streams responses in real time via a simple web interface
+## 🧠 How It Works (High Level)
 
-The assistant only responds based on retrieved context and emotional presence — not assumptions or external knowledge.
+1. Documents are loaded and split into manageable chunks  
+2. Chunks are embedded and stored in a Chroma vector database  
+3. User input retrieves the most relevant chunks  
+4. A carefully designed prompt controls tone and behavior  
+5. Responses are streamed to the user using Gradio  
 
-🧠 How It Works (High Level)
+---
 
-Documents are loaded and split into chunks
+## 🛠️ Tech Stack
 
-Chunks are embedded and stored in a Chroma vector database
+- Python  
+- LangChain  
+- ChromaDB  
+- OpenAI (or compatible LLM)  
+- Gradio  
+- python-dotenv  
 
-User input retrieves the most relevant chunks
+---
 
-A carefully designed prompt guides the model’s tone and behavior
+## 📂 Project Structure
 
-Responses are streamed to the user using Gradio
-
-🛠️ Tech Stack
-
-Python
-
-LangChain
-
-ChromaDB
-
-OpenAI / compatible LLM
-
-Gradio
-
-dotenv
-
-📂 Project Structure
-.
-├── data/               # Source documents
-├── chroma_db/          # Vector database
-├── create_database.py  # Builds the vector store
-├── chatbot.py          # Chat interface + prompt logic
-├── .env                # Environment variables (not committed)
-├── .gitignore
-└── README.md
-
-🚧 Current Status
-
-This is an early-stage project built as a learning experience.
-The focus so far has been on:
-
-Prompt design
-
-Emotional tone
-
-RAG fundamentals
-
-System behavior boundaries
-
-Future improvements may include:
-
-Better context handling
-
-Local/offline models
-
-Improved UI
-
-More refined emotional responses
-
-⚠️ Notes
-
-This project is not a replacement for therapy or mental health care
-
-It does not give advice, diagnoses, or treatment
-
-It is intended as a supportive, reflective tool only
-
-✨ Why This Exists
-
-This project explores how AI can feel less mechanical and more present, without pretending to be human or offering guidance it shouldn’t.
-
-Sometimes, clarity starts with being heard.
